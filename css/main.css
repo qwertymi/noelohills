@@ -23,6 +23,7 @@ a {
 
 html {
   font-size: 10px;
+  overflow-x: hidden;
 }
 
 body {
@@ -32,6 +33,23 @@ body {
   line-height: 1.5;
   letter-spacing: -0.45px;
   font-style: normal;
+  overflow-x: hidden;
+}
+
+::-moz-selection {
+  background: #1ABC9C;
+}
+
+::selection {
+  background: #1ABC9C;
+}
+
+::-moz-selection {
+  background: #1ABC9C;
+}
+
+::-webkit-selection {
+  background: #1ABC9C;
 }
 
 /* 공통클래스 */
@@ -49,6 +67,139 @@ body {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
+}
+
+/* 모바일메뉴 */
+.mb-div {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99999;
+}
+
+.mb-div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 380px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.mb-bg {
+  position: relative;
+  width: 380px;
+  height: 100%;
+  padding: 0 30px;
+  background-color: #fff;
+}
+
+.mb-top {
+  position: relative;
+  display: block;
+  width: 320px;
+  padding: 35px 0 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.mb-top-txt {
+  position: relative;
+  display: block;
+}
+
+.login {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  color: #ffcc00;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.mb-close {
+  position: absolute;
+  right: 0px;
+  bottom: 22px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../images/btn-close.png") no-repeat center;
+  background-size: contain;
+  border: 0;
+  cursor: pointer;
+}
+
+.mb-wrap {
+  position: relative;
+  display: block;
+  width: 320px;
+}
+
+.mb-menu {
+  position: relative;
+  display: block;
+}
+
+.mb-menu > li {
+  position: relative;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.mb-mainmenu {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: #777;
+  font-weight: 500;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.mb-mainmenu::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: url("../images/ico-gnb-link-m.png") no-repeat center;
+  background-size: contain;
+}
+
+.mb-mainmenu-open {
+  color: #ffcc00;
+}
+
+.mb-mainmenu-open::after {
+  background: url("../images/ico-gnb-m-active-up.png") no-repeat center;
+  background-size: contain;
+}
+
+.mb-submenu {
+  position: relative;
+  display: none;
+}
+
+.mb-submenu li {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.mb-submenu li a {
+  position: relative;
+  display: block;
+  font-size: 14px;
+  color: #777;
 }
 
 /* 배너 */
@@ -83,6 +234,7 @@ body {
   top: 28px;
   display: block;
   z-index: 9;
+  /* pagination bullet css 수정 */
 }
 .banner .sw-banner .sw-banner-control .sw-banner-pg .swiper-pagination-bullet {
   width: 10px;
@@ -107,8 +259,8 @@ body {
   height: 32px;
   background: url("../images/x_icon.png") no-repeat center;
   border: 0;
-  cursor: pointer;
   z-index: 9;
+  cursor: pointer;
 }
 
 /* 레이아웃 */
@@ -159,8 +311,8 @@ body {
   line-height: 80px;
   text-align: center;
   font-size: 14px;
-  -moz-columns: #777;
-       columns: #777;
+  color: #777;
+  font-style: normal;
   z-index: 3;
   padding: 0 28px;
 }
@@ -179,13 +331,14 @@ body {
   transform: translateX(-50%);
   top: 0;
   display: block;
-  padding: 80px 20px 20px 20px;
+  visibility: hidden;
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
   text-align: center;
-  font-size: 13px;
   background-color: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-  display: block;
-  visibility: hidden;
 }
 .header .inner .gnb .menu > li .submenu li {
   padding: 17px 0;
@@ -231,25 +384,24 @@ body {
   transform: translateX(-50%);
   top: 30px;
   display: inline-block;
+  visibility: hidden;
   color: #fff;
   background-color: #000;
   white-space: nowrap;
-  font-size: 11px;
   padding: 4px 8px;
   border-radius: 3px;
-  visibility: hidden;
+  font-size: 11px;
 }
 .header .inner .member .member-list li a .tooltip::before {
   content: "";
   position: absolute;
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
-  top: -4px;
+  top: -3px;
   display: block;
   background-color: #000;
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
+  width: 6px;
+  height: 6px;
 }
 .header .inner .member .member-list li .member-cart {
   background: url("../images/ico-cart.png") no-repeat center;
@@ -261,11 +413,60 @@ body {
   background: url("../images/ico-login.png") no-repeat center;
 }
 
+.mb-bt {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  width: 30px;
+  height: 23px;
+  background: url("../images/btn-menu-line.png") no-repeat center;
+  border: 0;
+  cursor: pointer;
+}
+
+/* 상단 반응형 */
+@media all and (max-width: 1080px) {
+  .menu > li > a {
+    padding: 0 18px !important;
+  }
+
+  .member-list > li {
+    margin-left: 22px !important;
+  }
+}
+@media all and (max-width: 880px) {
+  .menu > li > a {
+    padding: 0 10px !important;
+  }
+}
+@media all and (max-width: 800px) {
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .gnb {
+    display: none !important;
+  }
+
+  .member-list li:last-child a {
+    display: none !important;
+  }
+
+  .mb-bt {
+    display: block;
+  }
+}
 /* 비주얼 */
 .visual {
   position: relative;
   display: block;
-  height: 910px;
 }
 .visual .sw-visual {
   width: 100%;
@@ -277,21 +478,27 @@ body {
   width: 100%;
   height: 100%;
 }
+.visual .sw-visual .visual-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 600px;
+}
 .visual .sw-visual .visual-1 {
-  background: url("../images/pc_main1.png") no-repeat center;
-  block-size: cover;
+  background: url("../images/PC_minimal_new.png") no-repeat center;
+  background-size: cover;
 }
 .visual .sw-visual .visual-2 {
-  background: url("../images/pc_main2.png") no-repeat center;
-  block-size: cover;
+  background: url("../images/PC1_newborn.png") no-repeat center;
+  background-size: cover;
 }
 .visual .sw-visual .visual-3 {
-  background: url("../images/pc_main3.png") no-repeat center;
-  block-size: cover;
+  background: url("../images/PC2_BabyEssence.png") no-repeat center;
+  background-size: cover;
 }
 .visual .sw-visual .visual-4 {
-  background: url("../images/pc_main4.png") no-repeat center;
-  block-size: cover;
+  background: url("../images/PC3_Branding.png") no-repeat center;
+  background-size: cover;
 }
 .visual .sw-visual .sw-visual-control {
   position: absolute;
@@ -312,42 +519,99 @@ body {
   background-color: #ffcf42;
 }
 .visual .sw-visual .visual-txt {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 650px;
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 50px 0;
 }
 .visual .sw-visual .visual-title {
   position: relative;
   display: block;
   font-size: 30px;
-  font-weight: bold;
   color: #777;
-  margin-bottom: 25px;
-  text-align: center;
+  margin-bottom: 35px;
+  font-weight: 500;
 }
 .visual .sw-visual .visual-desc {
   position: relative;
   display: block;
   font-size: 20px;
   color: #777;
-  margin-bottom: 30px;
-  font-weight: 500;
-  text-align: center;
+  margin-bottom: 20px;
 }
 .visual .sw-visual .visual-bt {
   position: relative;
-  display: block;
+  display: inline-block;
   font-size: 20px;
   color: #fff;
   background-color: #ffcc00;
-  text-align: center;
-  padding: 12px 20px;
-  font-weight: bold;
-  width: 120px;
-  margin: 0px auto;
+  padding: 10px 20px;
 }
 
+/* 비주얼 반응형 */
+@media all and (max-width: 1320px) {
+  .visual-img {
+    height: 45vw !important;
+  }
+
+  .sw-visual-control {
+    top: 41.66vw !important;
+  }
+
+  .visual-txt {
+    padding: 3.78vw 0 !important;
+  }
+}
+@media all and (max-width: 800px) {
+  .visual-img {
+    height: 125vw !important;
+  }
+
+  .visual-1 {
+    background: url("../images/M_minimal_new.png") no-repeat center !important;
+  }
+
+  .visual-2 {
+    background: url("../images/M1_newborn.png") no-repeat center !important;
+  }
+
+  .visual-3 {
+    background: url("../images/M2_BabyEssence.png") no-repeat center !important;
+  }
+
+  .visual-4 {
+    background: url("../images/M3_Branding.png") no-repeat center !important;
+  }
+
+  .sw-visual-control {
+    top: 120vw !important;
+  }
+}
+@media all and (max-width: 480px) {
+  .visual-img {
+    height: 124.375vw !important;
+  }
+
+  .visual-1 {
+    background: url("../images/v_480_1.png") no-repeat center !important;
+  }
+
+  .visual-2 {
+    background: url("../images/v_480_2.png") no-repeat center !important;
+  }
+
+  .visual-3 {
+    background: url("../images/v_480_3.png") no-repeat center !important;
+  }
+
+  .visual-4 {
+    background: url("../images/v_480_4.png") no-repeat center !important;
+  }
+
+  .sw-visual-control {
+    top: 115vw !important;
+  }
+}
 /* 카테고리 */
 .category {
   position: relative;
@@ -362,9 +626,8 @@ body {
   display: flex;
   width: 50%;
   height: 620px;
-  padding-left: 80px;
+  padding: 80px;
   align-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
 .category .inner > div .category-desc {
@@ -378,24 +641,57 @@ body {
 .category .inner > div .category-link {
   position: relative;
   display: block;
-  padding: 10px 30px;
+  padding: 10px 20px;
   border: 2px solid #777;
   font-size: 20px;
   font-weight: 600;
 }
 .category .inner > div:nth-child(1) {
-  background: url("../images/main_img01_2.png");
+  background: url("../images/main_img01_2.png") no-repeat center;
+  background-size: cover;
 }
 .category .inner > div:nth-child(4) {
-  background: url("../images/main_img02_2.png");
+  background: url("../images/main_img02_2.png") no-repeat center;
+  background-size: cover;
 }
 .category .inner > div:nth-child(5) {
-  background: url("../images/main_img03.png");
+  background: url("../images/main_img03.png") no-repeat center;
+  background-size: cover;
 }
 .category .inner > div:nth-child(8) {
-  background: url("../images/main_img04.png");
+  background: url("../images/main_img04.png") no-repeat center;
+  background-size: cover;
 }
 
+.wb2 {
+  position: absolute !important;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 30px;
+  display: none !important;
+  border: 2px solid #fff !important;
+  color: #fff !important;
+}
+
+@media all and (max-width: 1320px) {
+  .category .inner > div {
+    height: 46.96vw !important;
+  }
+}
+@media all and (max-width: 760px) {
+  .category .inner > div {
+    width: 100% !important;
+    height: 100vw !important;
+  }
+
+  .category-txt {
+    display: none !important;
+  }
+
+  .wb2 {
+    display: inline-block !important;
+  }
+}
 /* 사이트맵 */
 .sitemap {
   position: relative;
@@ -411,22 +707,20 @@ body {
 
 .sitemap-menu {
   position: relative;
-  display: block;
+  display: table;
   width: 770px;
 }
 
 .sitemap-menu > li {
   position: relative;
-  display: block;
-  float: left;
-  margin-right: 45px;
+  display: table-cell;
 }
 
 .sitemap-menu > li > a {
   position: relative;
   display: inline-block;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .sitemap-menu > li > a:hover {
@@ -436,13 +730,13 @@ body {
 .sitemap-submenu {
   position: relative;
   display: block;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 
 .sitemap-submenu li {
   position: relative;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .sitemap-submenu li a {
@@ -459,6 +753,15 @@ body {
   color: #ffcc00;
 }
 
+@media all and (max-width: 800px) {
+  .sitemap-menu {
+    padding: 0 20px;
+  }
+
+  .sitemap-submenu li a {
+    font-size: 10px;
+  }
+}
 /* 하단 */
 .footer {
   position: relative;
@@ -486,7 +789,6 @@ body {
   position: relative;
   display: block;
   white-space: nowrap;
-  margin-bottom: 4px;
 }
 
 .siteinfo-list li:last-child {
@@ -498,21 +800,15 @@ body {
   display: inline-block;
   margin-right: 40px;
   font-size: 12px;
-  color: #7e868c;
+  color: #777;
 }
 
 .siteinfo-list li span em {
   position: relative;
   display: inline-block;
-  margin-left: 20px;
+  margin-right: 20px;
   font-size: 12px;
-  color: #777;
-}
-
-.siteinfo-list li span a {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
+  color: #7e868c;
 }
 
 .insta-link {
@@ -541,7 +837,7 @@ body {
   color: #777;
 }
 
-.copy b {
+.copy strong {
   font-weight: 600;
 }
 
@@ -561,4 +857,35 @@ body {
   position: relative;
   display: block;
   font-size: 12px;
+}
+
+@media all and (max-width: 800px) {
+  .footer .inner {
+    width: 100%;
+  }
+
+  .footer-top .inner {
+    padding-bottom: 35px;
+    padding: 0 10px;
+  }
+
+  .siteinfo-list li span {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .siteinfo-list li span em {
+    width: 120px;
+  }
+
+  .copy {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .service-list {
+    width: 100%;
+    text-align: center;
+  }
 }/*# sourceMappingURL=main.css.map */
