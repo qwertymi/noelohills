@@ -47,12 +47,37 @@
   <!-- Swiper -->
   <link rel="stylesheet" href="js/swiper/swiper.min.css">
   <script src="js/swiper/swiper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"
+  integrity="sha512-gMjQeDaELJ0ryCI+FtItusU9MkAifCZcGq789FrzkiM49D8lbDhoaUaIX4ASU187wofMNlgBJ4ckbrXM9sE6Pg=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- 사용자 지정 -->
   <script src="js/script.js"></script>
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
+
+  <!-- 안내 -->
+  <div class="modal-wrap">
+    <div class="modal-main">
+      <h1><i class="fas fa-exclamation-circle"></i></h1>
+      <span>이 사이트는 <b>스터디용으로 제작</b>되었으며,<br> <b>리소스의 저작권은 원저작자</b>에게 있습니다.</span>
+      <p>
+        * 해당 사이트와 관련한 문제가 있으면 
+        <a href="mailto:kimhp1216@naver.com?subject=안녕하세요.">
+          여기</a>로 연락바랍니다.<br>
+        * 본 사이트는 Chrome 에 최적화되어 있습니다.
+      </p>
+      <button class="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+  <div class="modalopen">
+  <button><i class="fas fa-exclamation-circle"></i></button>
+  <span>안내창보기</span>
+  </div>
+
   <!-- 모바일메뉴 -->
   <div class="mb-div">
     <div class="mb-bg">
@@ -113,26 +138,19 @@
   <!-- 배너 -->
   <div class="banner">
     <div class="swiper-container sw-banner">
-      <!-- 슬라이드 내용 -->
       <div class="swiper-wrapper">
-
         <div class="swiper-slide">
           <a href="#" class="banner-1"></a>
         </div>
-
         <div class="swiper-slide">
           <a href="#" class="banner-2"></a>
         </div>
-
         <div class="swiper-slide">
           <a href="#" class="banner-3"></a>
         </div>
-
       </div>
 
-      <!-- 슬라이드 콘트롤 -->
       <div class="sw-banner-control">
-        <!-- 페이지네이션 -->
         <div class="sw-banner-pg"></div>
       </div>
 
@@ -221,16 +239,15 @@
     <!-- 비주얼 -->
     <section class="visual">
       <div class="swiper-container sw-visual">
-        <!-- 슬라이드 내용물 -->
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <a href="#">
               <div class="visual-img visual-1"></div>
               <div class="visual-txt">
-                <h3 class="visual-title">밀크 에센스 로션</h3>
+                <h3 class="visual-title">미니멀비 출시</h3>
                 <span class="visual-desc">
-                  국내 최초 100% <br />
-                  식품 그레이드 성분
+                  아이부터 어른까지 <br>
+                  클린 포뮬러 저자극 케어
                 </span>
                 <span class="visual-bt">
                   SHOP
@@ -242,10 +259,10 @@
             <a href="#">
               <div class="visual-img visual-2"></div>
               <div class="visual-txt">
-                <h3 class="visual-title">밀크 에센스 로션</h3>
+                <h3 class="visual-title">SPECIAL OFFER</h3>
                 <span class="visual-desc">
-                  국내 최초 100% <br>
-                  식품 그레이드 성분
+                  노엘로 힐스가 제안하는<br>
+                  아기 스킨케어 출산준비물
                 </span>
                 <span class="visual-bt">
                   SHOP
@@ -259,8 +276,8 @@
               <div class="visual-txt">
                 <h3 class="visual-title">밀크 에센스 로션</h3>
                 <span class="visual-desc">
-                  국내 최초 100% <br>
-                  식품 그레이드 성분
+                  아기 피부의 미래를 결정해주는<br>
+                  베이비 에센스
                 </span>
                 <span class="visual-bt">
                   SHOP
@@ -272,10 +289,10 @@
             <a href="#">
               <div class="visual-img visual-4"></div>
               <div class="visual-txt">
-                <h3 class="visual-title">밀크 에센스 로션</h3>
+                <h3 class="visual-title">8:23 PM</h3>
                 <span class="visual-desc">
-                  국내 최초 100% <br>
-                  식품 그레이드 성분
+                  가족에게 행복을 선사하는<br>
+                  스킨케어 라이프스타일 브랜드
                 </span>
                 <span class="visual-bt">
                   SHOP
@@ -284,7 +301,6 @@
             </a>
           </div>
         </div>
-        <!-- 슬라이드 콘트롤 -->
         <div class="sw-visual-control">
           <div class="sw-visual-pg"></div>
         </div>
